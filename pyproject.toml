@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanoinfer"
+version = "0.1.0"
+description = "The smallest, clearest, and most educational inference pipeline for LLMs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "WangXu", email = "wangxu@example.com"},
+]
+keywords = ["llm", "inference", "gpt", "pytorch", "education"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Education",
+]
+
+dependencies = [
+    "torch>=2.1.0",
+    "numpy>=1.24.0",
+    "transformers>=4.35.0",
+    "sentencepiece>=0.1.99",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "pydantic>=2.0.0",
+    "tqdm>=4.66.0",
+    "rouge-score>=0.1.2",
+    "nltk>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/wangx-u/nanoinfer"
+Repository = "https://github.com/wangx-u/nanoinfer"
+Documentation = "https://github.com/wangx-u/nanoinfer#readme"
+"Bug Tracker" = "https://github.com/wangx-u/nanoinfer/issues"
+
+[project.scripts]
+nanoinfer = "scripts.chat_infer:main"
+nanoinfer-eval = "scripts.chat_eval_infer:main"
+nanoinfer-server = "scripts.chat_server:main"
+nanoinfer-bench = "scripts.chat_bench:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nanoinfer*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 88
