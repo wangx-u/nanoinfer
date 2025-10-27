@@ -1,0 +1,18 @@
+# Core dependencies
+torch>=2.1.0
+numpy>=1.24.0
+transformers>=4.35.0
+sentencepiece>=0.1.99
+
+# Web framework
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+
+# Evaluation metrics
+rouge-score>=0.1.2
+nltk>=3.8.0
+
+# Utilities
+tqdm>=4.66.0
+psutil>=5.9.0  # For CPU memory monitoring

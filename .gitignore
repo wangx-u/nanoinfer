@@ -176,7 +176,6 @@ cython_debug/
 *.jsonl
 *.csv
 *.tsv
-*.txt
 *.log
 
 # Temporary files
